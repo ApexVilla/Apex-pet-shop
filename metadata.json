@@ -1,0 +1,7 @@
+{
+  "name": "Fortaleza Pet & Estética Animal",
+  "description": "Professional Pet Shop and Grooming landing page for Fortaleza Pet in Goiânia, featuring 24h service and AI-powered pet video generation.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

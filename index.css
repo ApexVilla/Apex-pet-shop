@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Outfit', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --color-pet-navy: #0a1120;
+  --color-pet-blue: #162447;
+  --color-pet-orange: #f94c10;
+  --color-pet-yellow: #f9d923;
+  --color-pet-green: #c3f296;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black text-white font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .neon-glow-green {
+    box-shadow: 0 0 10px rgba(195, 242, 150, 0.5), 0 0 20px rgba(195, 242, 150, 0.3);
+  }
+
+  .neon-glow-orange {
+    box-shadow: 0 0 10px rgba(249, 76, 16, 0.5), 0 0 20px rgba(249, 76, 16, 0.3);
+  }
+
+  .text-stroke {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
