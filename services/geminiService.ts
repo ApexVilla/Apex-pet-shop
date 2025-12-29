@@ -3,12 +3,16 @@ import { GoogleGenAI } from "@google/genai";
 
 export class GeminiService {
   private static getApiKey() {
-    return process.env.API_KEY;
+    const key = process.env.API_KEY || process.env.GEMINI_API_KEY;
+    if (!key) {
+      console.warn("Gemini API Key is missing! Check your environment variables (API_KEY or GEMINI_API_KEY).");
+    }
+    return key;
   }
 
   static async generatePetVideo(imageBytes: string, prompt: string, aspectRatio: '16:9' | '9:16') {
     const ai = new GoogleGenAI({ apiKey: this.getApiKey() });
-    
+
     try {
       let operation = await ai.models.generateVideos({
         model: 'veo-3.1-fast-generate-preview',
